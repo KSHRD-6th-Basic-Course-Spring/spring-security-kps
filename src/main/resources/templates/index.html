@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8"/>
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>Hello Guest User!!</h1>
+	<h1 sec:authorize="isAnonymous()">Hello Guest User!!</h1>
+	<h1 sec:authorize="isAuthenticated()">Hello <span th:text="${#authentication.name}"></span>!!</h1>
+	<a sec:authorize="hasRole('ROLE_ADMIN')" href="/admin">
+        Go to admin dashboard
+    </a>
 </body>
 </html>

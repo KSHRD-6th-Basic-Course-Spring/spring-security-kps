@@ -1,4 +1,4 @@
-package com.kshrd.demo.configuration;
+package com.kshrd.demo.configuration.handler;
 
 import java.io.IOException;
 
@@ -19,7 +19,7 @@ public class CustomAuthenticationSuccessHandler implements AuthenticationSuccess
 			Authentication authentication) throws IOException, ServletException {
 		System.out.println("Login success!!!");
 		
-		request.getSession().setMaxInactiveInterval(10);
+		request.getSession().setMaxInactiveInterval(3600);
 		
 		String redirectUrl;
 		try {

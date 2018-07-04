@@ -1,7 +1,10 @@
 package com.kshrd.demo.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class HomeController {
@@ -35,6 +38,27 @@ public class HomeController {
 	public String login() {
 		return "login";
 	}
+	
+	@Autowired
+	BCryptPasswordEncoder bcrypt;
+	
+//	@GetMapping("/encrypt")
+//	@ResponseBody
+//	public String encrypt(String pw) {
+//		return bcrypt.encode(pw);
+//	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

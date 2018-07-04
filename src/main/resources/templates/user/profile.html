@@ -1,10 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org"
+		xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 <meta charset="UTF-8"/>
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>My name is USER</h1>
+	<h1>My name is <span th:text="${#authentication.principal.fullName}"></span></h1>
+	
+	<div sec:authorize="hasRole('ROLE_ADMIN')">
+        Admin area
+    </div>
+
 </body>
 </html>
